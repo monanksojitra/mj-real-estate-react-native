@@ -8,6 +8,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
 import LoginThirdParty from '../../components/LoginThirdParty';
 import Button from '../../components/Button';
+import {useNavigation} from '@react-navigation/native';
 
 // Define the type for the form data
 type LoginFormData = {
@@ -25,6 +26,7 @@ const schema = yup.object().shape({
 });
 
 const LoginWithEmail = () => {
+  const navigation = useNavigation();
   const [error, setError] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const {
@@ -39,6 +41,7 @@ const LoginWithEmail = () => {
 
   const onSubmit = (data: LoginFormData) => {
     if (data.email === 'monank@admin.com' && data.password === '@dmin1234') {
+      navigation.navigate('faqandsupport');
       console.log(data);
     } else setError(true);
   };
