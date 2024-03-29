@@ -8,6 +8,8 @@ import Login from './screens/Login';
 import FaqAndSupport from './screens/FaqAndSupport';
 import CreateAc from './screens/Signup/CreateAc';
 import Otp from './screens/Signup/Otp';
+import MainLocation from './screens/location/MainLocation';
+import SearchLocation from './screens/location/SearchLocation';
 
 const Stack = createStackNavigator();
 
@@ -16,13 +18,15 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
-        initialRouteName="otp">
+        initialRouteName="searchlocation">
         <Stack.Screen name="splash" component={Splash} />
         <Stack.Screen name="intro" component={Intro} />
         <Stack.Screen name="login" component={Login} />
         <Stack.Screen name="faqandsupport" component={FaqAndSupport} />
         <Stack.Screen name="createaccount" component={CreateAc} />
         <Stack.Screen name="otp" component={Otp} />
+        <Stack.Screen name="location" component={MainLocation} />
+        <Stack.Screen name="searchlocation" component={SearchLocation} />
 
         <Stack.Screen name="home" component={Home} />
       </Stack.Navigator>
