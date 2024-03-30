@@ -25,6 +25,7 @@ module.exports = {
           600: '#3A3F67',
         },
       },
+     
     },
   },
   plugins: [],
