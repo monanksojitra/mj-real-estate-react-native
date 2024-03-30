@@ -10,7 +10,7 @@ const Header = ({back = true, skip = true, css = ''}) => {
   return (
     <View
       className={cn(
-        'h-16 w-full p-5 flex flex-row items-center justify-between',
+        'h-16 w-full p-5 mt-3 flex flex-row items-center justify-between',
         css,
       )}>
       {back && (

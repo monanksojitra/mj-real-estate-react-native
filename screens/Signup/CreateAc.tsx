@@ -9,6 +9,7 @@ import * as yup from 'yup';
 import {useNavigation} from '@react-navigation/native';
 import Button from '../../components/Button';
 import Header from '../../components/Header';
+import Title from '../../components/Title';
 type LoginFormData = {
   email: string;
   password: string;
@@ -49,15 +50,12 @@ const CreateAc = () => {
     <View className="h-full bg-white">
       <Header />
       <View className="flex justify-between items-stretch">
-        <View className="p-5 space-y-4 mt-4">
-          <Text className="text-2xl text-blue-200 font-semibold">
-            Create your{' '}
-            <Text className="text-blue-100 font-bold">account </Text>
-          </Text>
-          <Text className="text-blue-100/50 text-xs">
-            quis nostrud exercitation ullamco laboris nisi ut
-          </Text>
-        </View>
+        <Title
+          title=" Create your"
+          titleBold="account"
+          subtitle=" quis nostrud exercitation ullamco laboris nisi ut"
+        />
+
         <View className="px-7 space-y-4 my-5">
           <Controller
             control={control}

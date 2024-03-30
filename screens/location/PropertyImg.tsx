@@ -2,6 +2,7 @@ import {View, Text, FlatList, Image} from 'react-native';
 import React from 'react';
 import Header from '../../components/Header';
 import Button from '../../components/Button';
+import Title from '../../components/Title';
 
 const PropertyImg = () => {
   const imggrid = [
@@ -25,15 +26,12 @@ const PropertyImg = () => {
   return (
     <View>
       <Header />
-      <View className="p-6 space-y-4 mt-6">
-        <Text className="text-2xl text-blue-200 font-semibold">
-          Select your preferable
-          <Text className="text-blue-100 font-bold"> real estate type</Text>
-        </Text>
-        <Text className="text-blue-100/50 text-xs">
-          You can edit this later on your account setting.
-        </Text>
-      </View>
+      
+      <Title
+        title=" Select your preferable"
+        titleBold="real estate type"
+        subtitle="  You can edit this later on your account setting."
+      />
       <View className="flex flex-row flex-wrap items-center justify-center">
         {imggrid.map(item => (
           <View key={item.id} className="px-[2px] py-px">

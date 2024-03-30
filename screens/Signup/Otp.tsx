@@ -3,6 +3,7 @@ import React, {useRef, useState} from 'react';
 import Header from '../../components/Header';
 import Button from '../../components/Button';
 import Fontisto from 'react-native-vector-icons/Fontisto';
+import Title from '../../components/Title';
 
 interface OTPProps {
   onComplete: (code: string) => void;
@@ -48,16 +49,11 @@ const Otp: React.FC<OTPProps> = ({onComplete, length = 4}) => {
     <View className="h-full bg-white">
       <Header />
       <View className="flex justify-between items-stretch">
-        <View className="p-5 mt-4">
-          <Text className="text-2xl text-blue-200 font-semibold">
-            Enter the
-            <Text className="text-blue-100 font-bold">code </Text>
-          </Text>
-          <Text className="text-blue-500 text-xs mt-4">
-            Enter the 4 digit code that we just sent to
-          </Text>
-          <Text className="text-blue-400 font-bold">jonathan@email.com</Text>
-        </View>
+        <Title
+          title="Enter the"
+          titleBold="code"
+          subtitle="Enter the 4 digit code that we just sent to"
+        />
       </View>
       <View className="flex flex-row items-center justify-between px-5">
         {Array.from({length}).map((_, index) => (

@@ -2,6 +2,7 @@ import {View, Text, Image} from 'react-native';
 import React from 'react';
 import Button from '../../components/Button';
 import LoginThirdParty from '../../components/LoginThirdParty';
+import Title from '../../components/Title';
 
 const LoginMain = () => {
   return (
@@ -14,8 +15,9 @@ const LoginMain = () => {
       </View>
       <View className="px-5 mt-7">
         <Text className="text-2xl text-black font-bold">
-          Ready to <Text className="text-blue-100">explore?</Text>
+          <Text className="text-blue-100"></Text>
         </Text>
+        <Title title="Ready to" titleBold="explore?" />
         <Button
           onpress={() => {}}
           icon="mail"

@@ -11,6 +11,7 @@ import Otp from './screens/Signup/Otp';
 import MainLocation from './screens/location/MainLocation';
 import SearchLocation from './screens/location/SearchLocation';
 import PropertyImg from './screens/location/PropertyImg';
+import SelectProperty from './screens/location/SelectProperty';
 
 const Stack = createStackNavigator();
 
@@ -19,7 +20,7 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
-        initialRouteName="propertyimg">
+        initialRouteName="selectproperty">
         <Stack.Screen name="splash" component={Splash} />
         <Stack.Screen name="intro" component={Intro} />
         <Stack.Screen name="login" component={Login} />
@@ -29,6 +30,7 @@ const App = () => {
         <Stack.Screen name="location" component={MainLocation} />
         <Stack.Screen name="searchlocation" component={SearchLocation} />
         <Stack.Screen name="propertyimg" component={PropertyImg} />
+        <Stack.Screen name="selectproperty" component={SelectProperty} />
 
         <Stack.Screen name="home" component={Home} />
       </Stack.Navigator>

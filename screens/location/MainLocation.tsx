@@ -3,20 +3,18 @@ import React from 'react';
 import Header from '../../components/Header';
 import Serach from '../../components/Serach';
 import Button from '../../components/Button';
+import Title from '../../components/Title';
 
 const MainLocation = ({navigation}) => {
   return (
     <View className="flex h-full">
       <Header css="mt-3" />
-      <View className="p-6 space-y-4 mt-6">
-        <Text className="text-2xl text-blue-200 font-semibold">
-          Add your
-          <Text className="text-blue-100 font-bold"> location</Text>
-        </Text>
-        <Text className="text-blue-100/50 text-xs">
-          You can edit this later on your account setting.
-        </Text>
-      </View>
+
+      <Title
+        subtitle=" You can edit this later on your account setting."
+        title="Add your"
+        titleBold="location"
+      />
       <View className="flex  items-center justify-center w-full">
         <Image source={require('../../assets/map.png')} />
       </View>

@@ -9,6 +9,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import LoginThirdParty from '../../components/LoginThirdParty';
 import Button from '../../components/Button';
 import {useNavigation} from '@react-navigation/native';
+import Title from '../../components/Title';
 
 // Define the type for the form data
 type LoginFormData = {
@@ -50,14 +51,16 @@ const LoginWithEmail = () => {
     <View className="h-full bg-white">
       <Image source={require('../../assets/loginlogo.png')} />
       <View className="flex justify-between items-stretch">
-        <View className="p-5 space-y-4 mt-4">
-          <Text className="text-2xl text-blue-200 font-bold">
-            Let’s <Text className="text-blue-100">Sign In </Text>
-          </Text>
-          <Text className="text-blue-100/50 text-xs">
-            quis nostrud exercitation ullamco laboris nisi ut
-          </Text>
-        </View>
+        <Title
+          subtitle=" quis nostrud exercitation ullamco laboris nisi ut"
+          title=" Let’s "
+          titleBold="Sign In"
+        />
+        <Text className="text-2xl text-blue-200 font-bold">
+          <Text className="text-blue-100"> </Text>
+        </Text>
+        <Text className="text-blue-100/50 text-xs"></Text>
+
         <View className="px-7 space-y-4 my-5">
           {error && (
             <View className="bg-blue-400 h-12 mb-3 rounded-xl flex items-center justify-center">

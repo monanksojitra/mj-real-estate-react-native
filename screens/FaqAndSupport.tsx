@@ -5,6 +5,7 @@ import Fontisto from 'react-native-vector-icons/Fontisto';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Accordion from 'react-native-collapsible/Accordion';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Title from '../components/Title';
 
 // Define the Section type
 type Section = {
@@ -70,14 +71,12 @@ const FaqAndSupport: React.FC = () => {
   return (
     <View className="h-full bg-white">
       <Header />
-      <View className="p-5 space-y-4 mt-4">
-        <Text className="text-2xl text-blue-100 font-bold">
-          FAQ <Text className="text-blue-200">&</Text> Support
-        </Text>
-        <Text className="text-blue-100/50 text-xs">
-          Find answer to your problem using this app.
-        </Text>
-      </View>
+
+      <Title
+        title="FAQ &"
+        titleBold="Support"
+        subtitle=" Find answer to your problem using this app."
+      />
       <View className="px-10">
         <View className="flex flex-row items-center border-b border-blue-100/30 py-4">
           <View className="bg-blue-100 h-8 aspect-square rounded-full flex items-center justify-center">
