@@ -7,7 +7,7 @@ const PaymentCard = () => {
     <LinearGradient
       start={{x: 0, y: 1}}
       end={{x: 1, y: 0}}
-      className="h-48  w-[80%] rounded-3xl p-7 space-y-3"
+      className="h-48  w-[80%] rounded-3xl p-7 space-y-3 drop-shadow-xl"
       colors={['#4285F4', '#3A9997', '#34A853']}>
       <View className="flex flex-row items-center justify-between ">
         <Image source={require('../assets/Chip.png')} />
