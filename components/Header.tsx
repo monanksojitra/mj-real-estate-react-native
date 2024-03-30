@@ -5,11 +5,14 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
 import {cn} from '../util/cn';
 
-const Header = ({back = true, skip = true, css=""}) => {
+const Header = ({back = true, skip = true, css = ''}) => {
   const navigation = useNavigation();
   return (
     <View
-      className={cn('h-16 w-full p-5 flex flex-row items-center justify-between',css)}>
+      className={cn(
+        'h-16 w-full p-5 flex flex-row items-center justify-between',
+        css,
+      )}>
       {back && (
         <TouchableOpacity
           onPress={() => navigation.goBack()}
@@ -20,7 +23,7 @@ const Header = ({back = true, skip = true, css=""}) => {
       {skip && (
         <TouchableOpacity
           onPress={() => {}}
-          className="h-12 px-7 flex items-center justify-center rounded-full bg-slate-200">
+          className="h-11 px-7 flex items-center justify-center rounded-full bg-slate-200">
           <Text className="text-blue-600 font-light">skip</Text>
         </TouchableOpacity>
       )}
