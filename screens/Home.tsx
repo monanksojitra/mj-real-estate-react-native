@@ -2,6 +2,8 @@ import {View, Text, TouchableOpacity, FlatList} from 'react-native';
 import React, {useState} from 'react';
 import Navbar from './Navbar';
 import Serach from '../components/Serach';
+import EventCard from '../components/EventCard';
+import CardHeader from '../components/CardHeader';
 
 const Home = () => {
   const catogery = [
@@ -11,6 +13,20 @@ const Home = () => {
     {id: 3, name: 'Villa'},
     {id: 4, name: 'Office'},
     {id: 5, name: 'Shop'},
+  ];
+  const event = [
+    {
+      id: 1,
+      src: require('../assets/event.png'),
+      titel: 'Halloween Sale!',
+      subtitel: 'All discount up to 60%',
+    },
+    {
+      id: 2,
+      src: require('../assets/event.png'),
+      titel: 'Summer Vacation',
+      subtitel: 'All discount up to 60%',
+    },
   ];
   const [selected, setSelected] = useState(0);
 
@@ -52,6 +68,22 @@ const Home = () => {
           )}
         />
       </View>
+      <View className="py-2 ">
+        <FlatList
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          data={event}
+          keyExtractor={item => item.id}
+          renderItem={({item}) => (
+            <EventCard
+              img={item.src}
+              titel={item.titel}
+              subtitel={item.subtitel}
+            />
+          )}
+        />
+      </View>
+      <CardHeader title="Featured Estates" />
     </View>
   );
 };
