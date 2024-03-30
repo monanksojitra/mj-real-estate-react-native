@@ -3,6 +3,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Home from './screens/Home';
 import React from 'react';
 import Splash from './screens/Splash';
+import {Root as PopupRootProvider} from 'react-native-popup-confirm-toast';
 import Intro from './screens/Intro';
 import Login from './screens/Login';
 import FaqAndSupport from './screens/FaqAndSupport';
@@ -13,6 +14,7 @@ import SearchLocation from './screens/location/SearchLocation';
 import PropertyImg from './screens/location/PropertyImg';
 import SelectProperty from './screens/location/SelectProperty';
 import PaymentMethod from './screens/location/PaymentMethod';
+import UserInfo from './screens/location/UserInfo';
 
 const Stack = createStackNavigator();
 
@@ -21,7 +23,7 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
-        initialRouteName="paymentmethod">
+        initialRouteName="userinfo">
         <Stack.Screen name="splash" component={Splash} />
         <Stack.Screen name="intro" component={Intro} />
         <Stack.Screen name="login" component={Login} />
@@ -33,6 +35,7 @@ const App = () => {
         <Stack.Screen name="propertyimg" component={PropertyImg} />
         <Stack.Screen name="selectproperty" component={SelectProperty} />
         <Stack.Screen name="paymentmethod" component={PaymentMethod} />
+        <Stack.Screen name="userinfo" component={UserInfo} />
 
         <Stack.Screen name="home" component={Home} />
       </Stack.Navigator>
