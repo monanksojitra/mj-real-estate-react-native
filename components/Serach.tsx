@@ -3,7 +3,7 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {cn} from '../util/cn';
 
-const Serach = ({css = '', mainicon, navigationicon}) => {
+const Serach = ({css = '', mainicon, navigationicon, placeholder}) => {
   return (
     <View
       className={cn(
@@ -13,7 +13,7 @@ const Serach = ({css = '', mainicon, navigationicon}) => {
       <Icon name={mainicon} color="#1F4C6B" size={28} />
 
       <TextInput
-        placeholder="Location detail"
+        placeholder={placeholder}
         placeholderTextColor="#A1A5C1"
         className="w-[85%] text-blue-100 text-base"
       />
