@@ -1,9 +1,12 @@
-import {View, Text, TouchableOpacity, FlatList} from 'react-native';
+import {View, Text, TouchableOpacity, FlatList, ScrollView} from 'react-native';
 import React, {useState} from 'react';
 import Navbar from './Navbar';
 import Serach from '../components/Serach';
 import EventCard from '../components/EventCard';
 import CardHeader from '../components/CardHeader';
+import FeaturedEstates from '../components/FeaturedEstates';
+import LocationTab from '../components/LocationTab';
+import EstateAgent from '../components/EstateAgent';
 
 const Home = () => {
   const catogery = [
@@ -30,8 +33,46 @@ const Home = () => {
   ];
   const [selected, setSelected] = useState(0);
 
+  const featuredestates = [
+    {
+      id: 1,
+      img: require('../assets/gridimgs/1.png'),
+      title: 'Sky Dandelions Apartment',
+      reting: '4.5',
+      location: 'London, UK',
+      price: 1200,
+      type: 'Home',
+    },
+    {
+      id: 2,
+      img: require('../assets/gridimgs/2.png'),
+      title: 'Sky Dandelions Apartment',
+      reting: '4.2',
+      location: 'London, UK',
+      price: 1600,
+      type: 'Home',
+    },
+    {
+      id: 3,
+      img: require('../assets/gridimgs/3.png'),
+      title: 'Sky Dandelions Apartment',
+      reting: '4.5',
+      location: 'London, UK',
+      price: 1100,
+      type: 'apartment',
+    },
+  ];
+  const locationList = [
+    {id: 1, name: 'London, UK', src: require('../assets/login1.png')},
+    {id: 2, name: 'Bali', src: require('../assets/login2.png')},
+    {id: 3, name: 'India', src: require('../assets/login3.png')},
+    {id: 4, name: 'India', src: require('../assets/login3.png')},
+    {id: 5, name: 'India', src: require('../assets/login3.png')},
+    {id: 6, name: 'India', src: require('../assets/login3.png')},
+  ];
+
   return (
-    <View>
+    <ScrollView>
       <View className="h-[356px] aspect-square rounded-full absolute -left-20 -top-20 -z-10 bg-blue-400/30" />
       <Navbar />
       <View className="px-6 space-y-2 mt-10">
@@ -68,7 +109,7 @@ const Home = () => {
           )}
         />
       </View>
-      <View className="py-2 ">
+      <View className="py-2 mt-4">
         <FlatList
           horizontal
           showsHorizontalScrollIndicator={false}
@@ -83,8 +124,50 @@ const Home = () => {
           )}
         />
       </View>
-      <CardHeader title="Featured Estates" />
-    </View>
+      <CardHeader
+        title="Featured Estates"
+        css="mt-4"
+        explor="view all"
+        onpress={() => {}}
+      />
+      <View className="flex mt-4">
+        <FlatList
+          horizontal
+          data={featuredestates}
+          renderItem={({item}) => <FeaturedEstates {...item} />}
+        />
+      </View>
+      <CardHeader
+        explor="explore"
+        onpress={() => {}}
+        title="Top Locations"
+        css="mt-4"
+      />
+      <FlatList
+        className="mt-4"
+        horizontal
+        data={locationList}
+        keyExtractor={item => item.id}
+        renderItem={({item}) => (
+          <LocationTab img={item.src} titel={item.name} />
+        )}
+      />
+      <CardHeader
+        explor="explore"
+        onpress={() => {}}
+        title="Top Estate Agent"
+        css="mt-4"
+      />
+      <FlatList
+        className="mt-4"
+        horizontal
+        data={locationList}
+        keyExtractor={item => item.id}
+        renderItem={({item}) => (
+          <EstateAgent img={item.src} titel={item.name} />
+        )}
+      />
+    </ScrollView>
   );
 };
 

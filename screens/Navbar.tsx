@@ -6,7 +6,7 @@ import Fontisto from 'react-native-vector-icons/Fontisto';
 
 const Navbar = () => {
   return (
-    <View className="flex flex-row items-center justify-between p-4">
+    <View className="flex flex-row  items-center justify-between p-4">
       <View className="flex flex-row items-center px-3 h-14 gap-x-2 bg-white rounded-full">
         <SimpleLineIcons name="location-pin" size={24} color="black" />
         <Text className="text-xs text-blue-200">Jakarta, Indonesia</Text>
