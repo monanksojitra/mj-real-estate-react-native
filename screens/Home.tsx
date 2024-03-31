@@ -7,6 +7,7 @@ import CardHeader from '../components/CardHeader';
 import FeaturedEstates from '../components/FeaturedEstates';
 import LocationTab from '../components/LocationTab';
 import EstateAgent from '../components/EstateAgent';
+import ExplorProperty from '../components/ExplorProperty';
 
 const Home = () => {
   const catogery = [
@@ -166,6 +167,18 @@ const Home = () => {
         renderItem={({item}) => (
           <EstateAgent img={item.src} titel={item.name} />
         )}
+      />
+      <CardHeader
+        title="Explore Nearby Estates"
+        onpress={() => {}}
+        css="mt-4"
+      />
+      <FlatList
+        className="mt-4"
+        horizontal
+        data={featuredestates}
+        keyExtractor={item => item.id}
+        renderItem={({item}) => <ExplorProperty {...item} />}
       />
     </ScrollView>
   );

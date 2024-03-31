@@ -6,10 +6,10 @@ type Props = {
   css?: string;
   title: string;
   onpress: () => void;
-  explor: string;
+  explor?: string;
 };
 
-const CardHeader = ({css = '', title, onpress, explor}: Props) => {
+const CardHeader = ({css = '', title, onpress, explor = ''}: Props) => {
   return (
     <View
       className={cn('flex flex-row items-center justify-between px-6', css)}>
