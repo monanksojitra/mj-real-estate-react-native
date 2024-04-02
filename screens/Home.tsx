@@ -75,8 +75,8 @@ const Home = () => {
   return (
     <ScrollView>
       <View className="h-[356px] aspect-square rounded-full absolute -left-20 -top-20 -z-10 bg-blue-400/30" />
-      <Navbar />
-      <View className="px-6 space-y-2 mt-10">
+
+      <View className="px-6 space-y-2 mt-20">
         <Text className="text-blue-200 text-2xl">
           Hey,<Text className="text-blue-400 font-bold"> Monank!</Text>
         </Text>

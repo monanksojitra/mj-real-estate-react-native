@@ -15,6 +15,7 @@ import PropertyImg from './screens/location/PropertyImg';
 import SelectProperty from './screens/location/SelectProperty';
 import PaymentMethod from './screens/location/PaymentMethod';
 import UserInfo from './screens/location/UserInfo';
+import BottomNavigation from './screens/BottomNavigation';
 
 const Stack = createStackNavigator();
 
@@ -37,7 +38,7 @@ const App = () => {
         <Stack.Screen name="paymentmethod" component={PaymentMethod} />
         <Stack.Screen name="userinfo" component={UserInfo} />
 
-        <Stack.Screen name="home" component={Home} />
+        <Stack.Screen name="home" component={BottomNavigation} />
       </Stack.Navigator>
     </NavigationContainer>
   );
