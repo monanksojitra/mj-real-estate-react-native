@@ -2,8 +2,14 @@ import {View, Text, Image} from 'react-native';
 import React from 'react';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-
-const ExplorProperty = ({img, title, reting, location, price}) => {
+type Props = {
+  img: any;
+  title: string;
+  reting: string;
+  location: string;
+  price: string;
+};
+const ExplorProperty = ({img, title, reting, location, price}: Props) => {
   return (
     <View className="flex items-center ml-2 justify-center bg-white rounded-3xl  w-[180px] h-[250px]">
       <View className="pt-2 relative">

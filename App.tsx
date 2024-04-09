@@ -1,21 +1,20 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import Home from './screens/Home';
 import React from 'react';
-import Splash from './screens/Splash';
-import {Root as PopupRootProvider} from 'react-native-popup-confirm-toast';
+import BottomNavigation from './screens/BottomNavigation';
+import FaqAndSupport from './screens/FaqAndSupport';
 import Intro from './screens/Intro';
 import Login from './screens/Login';
-import FaqAndSupport from './screens/FaqAndSupport';
 import CreateAc from './screens/Signup/CreateAc';
 import Otp from './screens/Signup/Otp';
+import Splash from './screens/Splash';
 import MainLocation from './screens/location/MainLocation';
-import SearchLocation from './screens/location/SearchLocation';
-import PropertyImg from './screens/location/PropertyImg';
-import SelectProperty from './screens/location/SelectProperty';
 import PaymentMethod from './screens/location/PaymentMethod';
+import PropertyImg from './screens/location/PropertyImg';
+import SearchLocation from './screens/location/SearchLocation';
+import SelectProperty from './screens/location/SelectProperty';
 import UserInfo from './screens/location/UserInfo';
-import BottomNavigation from './screens/BottomNavigation';
+import OTPVerification from './screens/Signup/Otp';
 
 const Stack = createStackNavigator();
 
@@ -24,13 +23,13 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
-        initialRouteName="home">
+        initialRouteName="splash">
         <Stack.Screen name="splash" component={Splash} />
         <Stack.Screen name="intro" component={Intro} />
         <Stack.Screen name="login" component={Login} />
         <Stack.Screen name="faqandsupport" component={FaqAndSupport} />
         <Stack.Screen name="createaccount" component={CreateAc} />
-        <Stack.Screen name="otp" component={Otp} />
+        <Stack.Screen name="otpvarify" component={OTPVerification} />
         <Stack.Screen name="location" component={MainLocation} />
         <Stack.Screen name="searchlocation" component={SearchLocation} />
         <Stack.Screen name="propertyimg" component={PropertyImg} />

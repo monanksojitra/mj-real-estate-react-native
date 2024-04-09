@@ -7,9 +7,9 @@ const Stack = createStackNavigator();
 
 const Login = () => {
   return (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name="loginwithemail" component={LoginWithEmail} />
+    <Stack.Navigator initialRouteName='loginmain' screenOptions={{headerShown: false}}>
       <Stack.Screen name="loginmain" component={LoginMain} />
+      <Stack.Screen name="loginwithemail" component={LoginWithEmail} />
     </Stack.Navigator>
   );
 };

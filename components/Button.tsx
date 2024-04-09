@@ -2,8 +2,13 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {cn} from '../util/cn';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-
-const Button = ({css = ' ', icon = '', onpress, title}) => {
+type Props = {
+  css?: string;
+  icon?: string;
+  onpress: () => void;
+  title: string;
+};
+const Button = ({css = ' ', icon = '', onpress, title}: Props) => {
   return (
     <TouchableOpacity
       onPress={onpress}

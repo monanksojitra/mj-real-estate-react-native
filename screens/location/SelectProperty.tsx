@@ -5,7 +5,7 @@ import Header from '../../components/Header';
 import {Checkbox} from 'react-native-paper';
 import Button from '../../components/Button';
 
-const SelectProperty = () => {
+const SelectProperty = ({navigation}: any) => {
   const imggrid = [
     {id: 1, src: require('../../assets/gridimgs/1.png')},
     {id: 2, src: require('../../assets/gridimgs/2.png')},
@@ -28,7 +28,7 @@ const SelectProperty = () => {
 
   return (
     <View className="flex justify-center h-screen">
-      <Header />
+      <Header onSkip={() => navigation.navigate('paymentmethod')} />
       <Title
         title="Select your preferable"
         titleBold="real estate type "

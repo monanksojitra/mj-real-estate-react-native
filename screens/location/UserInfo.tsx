@@ -1,5 +1,5 @@
 import {View, Text, TextInput} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import Header from '../../components/Header';
 import Title from '../../components/Title';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -7,10 +7,15 @@ import Feather from 'react-native-vector-icons/Feather';
 import Button from '../../components/Button';
 import Alert from '../../components/Alert';
 
-const UserInfo = () => {
+const UserInfo = ({navigation}: any) => {
+  const [alert, setAlert] = useState(false);
+  const handelNavigate = () => {
+    setAlert(false);
+    navigation.navigate('home');
+  };
   return (
     <View>
-      <Header />
+      <Header onSkip={() => navigation.navigate('home')} />
       <Title
         title="Fill your"
         titleBold=" information below "
@@ -56,9 +61,9 @@ const UserInfo = () => {
         </View>
       </View>
       <View className="flex items-center justify-center mt-8">
-        <Button onpress={() => {}} title="Next" css="w-[60%]" />
+        <Button onpress={() => setAlert(true)} title="Next" css="w-[60%]" />
       </View>
-      <Alert />
+      <Alert setAlert={handelNavigate} toggle={alert} />
     </View>
   );
 };

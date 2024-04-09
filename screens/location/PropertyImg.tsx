@@ -4,7 +4,7 @@ import Header from '../../components/Header';
 import Button from '../../components/Button';
 import Title from '../../components/Title';
 
-const PropertyImg = () => {
+const PropertyImg = ({navigation}: any) => {
   const imggrid = [
     {id: 1, src: require('../../assets/gridimgs/1.png')},
     {id: 2, src: require('../../assets/gridimgs/2.png')},
@@ -25,8 +25,8 @@ const PropertyImg = () => {
   ];
   return (
     <View>
-      <Header />
-      
+      <Header onSkip={() => navigation.navigate('selectproperty')} />
+
       <Title
         title=" Select your preferable"
         titleBold="real estate type"

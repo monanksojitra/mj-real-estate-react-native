@@ -6,7 +6,7 @@ import PaymentCard from '../../components/PaymentCard';
 import Feather from 'react-native-vector-icons/Feather';
 import Button from '../../components/Button';
 
-const PaymentMethod = () => {
+const PaymentMethod = ({navigation}: any) => {
   const [activeindex, setActiveIndex] = useState(0);
   const paymentcards = [
     {
@@ -33,7 +33,7 @@ const PaymentMethod = () => {
   ];
   return (
     <View>
-      <Header />
+      <Header onSkip={() => navigation.navigate('userinfo')} />
       <Title
         title="Add your "
         titleBold="payment method"
