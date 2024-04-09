@@ -56,10 +56,10 @@ const LoginWithEmail = () => {
           title=" Let’s "
           titleBold="Sign In"
         />
-        <Text className="text-2xl text-blue-200 font-bold">
+        {/* <Text className="text-2xl text-blue-200 font-bold border-2">
           <Text className="text-blue-100"> </Text>
-        </Text>
-        <Text className="text-blue-100/50 text-xs"></Text>
+        </Text> */}
+        {/* <Text className="text-blue-100/50 text-xs"></Text> */}
 
         <View className="px-7 space-y-4 my-5">
           {error && (
@@ -133,14 +133,14 @@ const LoginWithEmail = () => {
             </TouchableOpacity>
           </View>
         </View>
-        <View className="w-full flex items-center justify-center mt-8">
+        <View className="w-full flex items-center justify-center mt-4">
           <Button
             onpress={handleSubmit(onSubmit)}
             title="Login"
             css="w-[60%]"
           />
         </View>
-        <LoginThirdParty />
+        <LoginThirdParty css="mt-3" />
       </View>
     </View>
   );

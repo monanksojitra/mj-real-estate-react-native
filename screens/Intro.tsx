@@ -8,7 +8,7 @@ import {
 import React, {useState} from 'react';
 import Button from '../components/Button';
 
-const Intro = ({navigation}) => {
+const Intro = ({navigation}: any) => {
   const introList = [
     {
       id: 1,
@@ -34,14 +34,14 @@ const Intro = ({navigation}) => {
   ];
   const [index, setIndex] = useState(0);
   return (
-    <View className="px-5 pt-5">
+    <View className="px-5 pt-3">
       <View className="flex flex-row  items-center justify-between">
         <View className="">
           <Image source={require('../assets/logo2.png')} />
         </View>
         <TouchableOpacity
-          onPress={() => navigation.navigate('home')}
-          className="bg-light-100 h-10 px-7 flex items-center justify-center rounded-2xl">
+          onPress={() => navigation.navigate('login')}
+          className="bg-light-100 h-10 px-7 flex items-center justify-center rounded-3xl">
           <Text className="text-xs tracking-widest text-black">skip</Text>
         </TouchableOpacity>
       </View>
@@ -65,7 +65,7 @@ const Intro = ({navigation}) => {
             onpress={
               index < 2
                 ? () => setIndex(pre => pre + 1)
-                : () => navigation.navigate('home')
+                : () => navigation.navigate('login')
             }
             title={index < 2 ? 'Next' : 'Start'}
             css="mt-5"

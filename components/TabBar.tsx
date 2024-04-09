@@ -1,40 +1,48 @@
 import {View, Text, TouchableOpacity} from 'react-native';
-import React from 'react';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import React, {useState} from 'react';
+import FontAwesome from 'react-native-vector-icons/Ionicons';
+type Props = {
+  state: any;
+  navigation: any;
+};
+const TabBar = ({state, navigation}: Props) => {
+  const [focusedIndex, setFocusedIndex] = useState(1);
+  const routes = [
+    {id: 1, label: 'Home', iconName: 'home', routeName: 'main'},
+    {id: 2, label: 'Search', iconName: 'search', routeName: 'main'},
+    {id: 3, label: 'likeProperty', iconName: 'heart', routeName: 'main'},
+    {id: 4, label: 'Profile', iconName: 'person', routeName: 'main'},
+  ];
 
-const TabBar = ({state, descriptors, navigation}) => {
   return (
-    <View>
-      {state.routes.map((route: any, index: number) => {
-        const {options} = descriptors[route.key];
-        const label =
-          options.tabBarLabel !== undefined
-            ? options.tabBarLabel
-            : options.title !== undefined
-            ? options.title
-            : route.name;
-
+    <View className="flex flex-row px-7 items-center justify-between h-16 bg-light-200">
+      {routes.map((route, index) => {
         const isFocused = state.index === index;
 
         const onPress = () => {
+          setFocusedIndex(route.id);
           const event = navigation.emit({
             type: 'tabPress',
-            target: route.key,
+            target: route.routeName,
           });
 
           if (!isFocused && !event.defaultPrevented) {
-            navigation.navigate(route.name);
+            navigation.navigate(route.routeName);
           }
         };
 
         return (
-          <View key={index}>
-            <TouchableOpacity onPress={onPress}>
-              <View>
-                <FontAwesome name={label ?? 'home'} />
-              </View>
-            </TouchableOpacity>
-          </View>
+          <TouchableOpacity onPress={onPress} key={route.id}>
+            <FontAwesome
+              name={
+                focusedIndex === route.id
+                  ? route.iconName
+                  : `${route.iconName}-outline`
+              }
+              size={28}
+              color="#234F68"
+            />
+          </TouchableOpacity>
         );
       })}
     </View>

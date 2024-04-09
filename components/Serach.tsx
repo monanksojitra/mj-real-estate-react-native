@@ -2,8 +2,13 @@ import {View, Text, TextInput, TouchableOpacity} from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {cn} from '../util/cn';
-
-const Serach = ({css = '', mainicon, navigationicon, placeholder}) => {
+type Props = {
+  css?: string;
+  mainicon?: string;
+  navigationicon?: string;
+  placeholder?: string;
+};
+const Serach = ({css = '', mainicon, navigationicon, placeholder}: Props) => {
   return (
     <View
       className={cn(

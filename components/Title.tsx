@@ -3,14 +3,14 @@ import React from 'react';
 import {cn} from '../util/cn';
 
 type Props = {
-  className?: string;
+  css?: string;
   title: string;
   titleBold: string;
   subtitle?: string;
 };
-const Title = ({className = '', title, titleBold, subtitle = ''}: Props) => {
+const Title = ({css = '', title, titleBold, subtitle = ''}: Props) => {
   return (
-    <View className={cn('p-6 space-y-4 mt-6', className)}>
+    <View className={cn('p-6 space-y-4 mt-6', css)}>
       <Text className="text-2xl text-blue-200 font-semibold">
         {title}
         <Text className="text-blue-100 font-bold"> {titleBold}</Text>

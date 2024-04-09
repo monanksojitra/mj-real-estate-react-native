@@ -8,11 +8,11 @@ import {
 import React, {Children} from 'react';
 import Button from '../components/Button';
 
-const Splash = ({navigation}) => {
+const Splash = ({navigation}: any) => {
   return (
     <ImageBackground
       source={require('../assets/splash.png')}
-      className="h-screen flex items-center justify-center  ">
+      className="h-screen flex items-center justify-center">
       <View className="  flex items-center justify-between h-full w-full bg-slate-200/40">
         <View className="flex items-center justify-center h-[85%]">
           <Image

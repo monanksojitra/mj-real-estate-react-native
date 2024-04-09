@@ -6,6 +6,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Accordion from 'react-native-collapsible/Accordion';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Title from '../components/Title';
+import {useNavigation} from '@react-navigation/native';
 
 // Define the Section type
 type Section = {
@@ -13,10 +14,10 @@ type Section = {
   content: JSX.Element;
 };
 
-const FaqAndSupport: React.FC = () => {
+const FaqAndSupport = () => {
   const [tab, setTab] = useState<boolean>(false);
   const [activeSections, setActiveSections] = useState<number[]>([]);
-
+  const navigate = useNavigation();
   const sections: Section[] = [
     {
       title: 'What is Rise Real Estate?',
@@ -70,7 +71,7 @@ const FaqAndSupport: React.FC = () => {
 
   return (
     <View className="h-full bg-white">
-      <Header />
+      <Header back={false} onSkip={() => navigate.navigate('location')} />
 
       <Title
         title="FAQ &"

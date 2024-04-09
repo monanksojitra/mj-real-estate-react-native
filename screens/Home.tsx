@@ -71,6 +71,28 @@ const Home = () => {
     {id: 5, name: 'India', src: require('../assets/login3.png')},
     {id: 6, name: 'India', src: require('../assets/login3.png')},
   ];
+  const agentList = [
+    {
+      id: 1,
+      name: 'lokesn',
+      src: require('../assets/gridimgs/1.png'),
+    },
+    {
+      id: 2,
+      name: 'verito',
+      src: require('../assets/gridimgs/2.png'),
+    },
+    {
+      id: 3,
+      name: 'jamlo',
+      src: require('../assets/gridimgs/3.png'),
+    },
+    {
+      id: 4,
+      name: 'renod',
+      src: require('../assets/gridimgs/4.png'),
+    },
+  ];
 
   return (
     <ScrollView>
@@ -162,7 +184,7 @@ const Home = () => {
       <FlatList
         className="mt-4"
         horizontal
-        data={locationList}
+        data={agentList}
         keyExtractor={item => item.id}
         renderItem={({item}) => (
           <EstateAgent img={item.src} titel={item.name} />

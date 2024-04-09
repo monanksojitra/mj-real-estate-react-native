@@ -19,7 +19,7 @@ const schema = yup.object().shape({
   name: yup
     .string()
     .min(4, 'Name must be at least 8 characters')
-    .required('Full name     is required'),
+    .required('Full name is required'),
   password: yup
     .string()
     .min(8, 'Password must be at least 8 characters')
@@ -41,14 +41,13 @@ const CreateAc = () => {
   const toggleShowPassword = () => setShowPassword(!showPassword);
 
   const onSubmit = (data: LoginFormData) => {
-    if (data.email === 'monank@admin.com' && data.password === '@dmin1234') {
-      console.log(data);
-    } else setError(true);
+    console.log(data);
+    navigation.navigate('otpvarify');
   };
 
   return (
     <View className="h-full bg-white">
-      <Header />
+      <Header onSkip={() => navigation.navigate('location')} />
       <View className="flex justify-between items-stretch">
         <Title
           title=" Create your"
